@@ -1,23 +1,43 @@
-<!DOCTYPE html>
-<style>
-  /* netnet default bg */
-  body {
-    margin: 0;
-    background-image: linear-gradient(#515199a8 2px, transparent 1px),
-      linear-gradient(90deg, #515199a8 2px, transparent 1px);
-    background-size: 50px 50px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
+<script>
+    // THIS HTML FILE MAKES A WEBPAGE WITH TEXT. 
+    // THE COLOR, FRONT SIZE, AND POSITION OF THE TEXT AND 
+    // THE BACKGROUND COLOR OF THE DOCUMENT CAN BE EDITED.
 
-  body::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(0deg, #c76ebca8, #515199a8);
-  }
-</style>
+    // DIRECTLY BELOW ARE VARAIABLES IVE CREATED. THEY HOLD INFORMATION,
+    // AND IVE NAMED EACH OF THEM. RIGHT NOW, THEY HOLD HEX COLOR CODES 
+    // FOR MY COLOR NAMES. 
+    const pink = '#c271a2'
+    const black = '#2E2222'
+    const standard = '#213340'
+
+    function createText(cool, yvalue, dye, size) {
+        const text = document.createElement("div")
+        const content = document.createTextNode(cool)
+        text.appendChild(content)
+        const currentDiv = document.getElementById("div1")
+        document.body.insertBefore(text, currentDiv)
+        text.style.position = 'absolute'
+        text.style.top = yvalue 
+        text.style.left = innerWidth / 7
+        text.style.color = dye
+        text.style.fontSize = size
+      }
+
+    function setup () {
+        //    THIS CONTROLS THE BACKGROUND COLOR OF THIS WEBPAGE
+        document.body.style.backgroundColor = pink
     
+        //    DON'T KNOW WHERE TO START?
+        ////  make edits below in the parentheses! 
+        ////  There are four data points to edit:
+        ////  first is the message in quotes, 
+        ////  second is the position of the text from the top of the page,
+        ////  third is the color of the text, and
+        ////  fourth is the font size.
+        createText('FREE PALESTINE', 222, standard, 22)
+        createText('FREE PALESTINE', 333, black, 111)
+    }
+
+        window.addEventListener('load', setup)
+
+    </script>
